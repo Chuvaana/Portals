@@ -289,8 +289,10 @@ public class Portal : MonoBehaviour {
     void OnTriggerExit (Collider other) {
         var traveller = other.GetComponent<PortalTraveller> ();
         if (traveller && trackedTravellers.Contains (traveller)) {
+
             traveller.ExitPortalThreshold ();
-            trackedTravellers.Remove (traveller);
+
+            trackedTravellers.Remove (traveller);print(traveller);
         }
     }
 
